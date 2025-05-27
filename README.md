@@ -1,8 +1,8 @@
 # cloupe_image
 
-High-resolution microscope images (e.g., 20,000 × 20,000 pixels), which are much larger than the typical tissue_hires_image.png, are often not readily available as a single file. Instead, these images are usually stored inside the .cloupe file as multiple smaller tiles (chunks) at various resolutions.
+High-resolution microscope images (e.g., 20,000 × 20,000 pixels), which are much larger than the `tissue_hires_image.png`, are often not readily available as a single file. Instead, these images are usually stored inside the `.cloupe` file as multiple smaller tiles (chunks) at various resolutions.
 
-This repository is used for opening a .cloupe file, extracting these image tiles, and stitching them together to reconstruct the full high-resolution microscope image.
+This repository is used for opening a `.cloupe` file, extracting these image tiles, and stitching them together to reconstruct the full high-resolution microscope image.
 
 ## Installation
 
