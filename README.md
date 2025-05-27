@@ -29,5 +29,7 @@ plt.axis('off')
 plt.show()
 ```
 
-Thanks to cellgeni/cloupe for inspiration and concepts used in this project.
+
+
+### Thanks to cellgeni/cloupe for inspiration and concepts used in this project.
 some of the concepts used in this repo are from cellgeni/cloupe, such as opening a cloupe file in Python and iterating through its content 
