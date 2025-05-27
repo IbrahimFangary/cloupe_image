@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="cloupe_image",
+    name="Cloupe_image",
     version="0.1.0",
     author="Ibrahim Fangary",
     description="Tool to stitch high-res images (the closest resolution to the microscope image) from 10x Genomics .cloupe files",
