@@ -12,9 +12,9 @@ pip install git+https://github.com/IbrahimFangary/cloupe_image.git
 
 # how to use 
 ```python
-import cloupe_image
+import Cloupe_image
 
-cloupe_image.stitch_cloupe_image('your_file.cloupe')
+Cloupe_image.stitch_cloupe_image('GSM6433587_093A.cloupe')
 ```
 
 ## The output includes a very high-resolution image (stitched_highres.tiff) and a downsampled version (stitched_downsampled.tiff) for easier visualization.
