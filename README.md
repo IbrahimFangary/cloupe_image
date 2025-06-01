@@ -10,11 +10,11 @@ This repository is used for opening a `.cloupe` file, extracting these image til
 pip install git+https://github.com/IbrahimFangary/cloupe_image.git
 ```
 
-# how to use 
+## how to use 
 ```python
 import Cloupe_image
 
-Cloupe_image.stitch_cloupe_image('GSM6433587_093A.cloupe')
+Cloupe_image.stitch_cloupe_image('your_cloupe_file.cloupe')
 ```
 
 ## The output includes a very high-resolution image (stitched_highres.tiff) and a downsampled version (stitched_downsampled.tiff) for easier visualization.
