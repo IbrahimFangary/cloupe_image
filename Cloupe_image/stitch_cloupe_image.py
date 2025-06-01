@@ -82,7 +82,7 @@ def stitch_cloupe_image(cloupe_path):
             logging.warning(f"Failed to process tile {tile_path}: {e}")
             
     stitched = stitched.transpose(Image.ROTATE_270)       # Rotate 90 degrees to the right
-    stitched = stitched.transpose(Image.FLIP_LEFT_RIGHT)  # Then flip horizontally
+    # stitched = stitched.transpose(Image.FLIP_LEFT_RIGHT)  # Then flip horizontally
 
     try:
         stitched.save("stitched_highres.tiff", format="TIFF")
