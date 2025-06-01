@@ -19,7 +19,7 @@ Cloupe_image.stitch_cloupe_image('your_cloupe_file.cloupe')
 
 The output includes a very high-resolution image (stitched_highres.tiff) and a downsampled version (stitched_downsampled.tiff) for easier visualization.
 
-Display the downsampled image:
+### Display the downsampled image:
 ```python
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
