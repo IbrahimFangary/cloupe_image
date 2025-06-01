@@ -50,26 +50,39 @@ def stitch_cloupe_image(cloupe_path):
     stitched = Image.new("RGB", (full_width, full_height))
     processed = 0
 
+    zoom_levels = [int(tile_path.split("/")[0]) for tile_path in tiles_dict.keys()]
+    max_zoom_level = max(zoom_levels)
+    logging.info(f"Using highest zoom level: {max_zoom_level}")
+
     for tile_path, meta in tiles_dict.items():
+    
+        if not tile_path.startswith(f"{max_zoom_level}/"):
+            continue  
+        
         try:
             row_col = os.path.basename(tile_path).replace(f".{img_format}", "").split("_")
-            row, col = int(row_col[0]), int(row_col[1])
-            x, y = col * tile_size, row * tile_size
-
+            row, col = int(row_col[0]), int(row_col[1])  
+    
             with open(cloupe_path, "rb") as f:
                 f.seek(meta["Start"])
                 tile_bytes = f.read(meta["End"] - meta["Start"])
-
+    
             tile_data = decompress_chunk(tile_bytes)
-            tile_img = Image.open(io.BytesIO(tile_data))
-            stitched.paste(tile_img, (x, y))
-
+            tile_img = Image.open(io.BytesIO(tile_data))  
+            tile_width, tile_height = tile_img.size
+    
+            y, x = col * tile_size, row * tile_size  # x = col * size, y = row * size
+            stitched.paste(tile_img, (x, y, x + tile_width, y + tile_height))
+    
             processed += 1
             if processed % 100 == 0:
                 logging.info(f"Stitched {processed}/{len(tiles_dict)} tiles.")
 
         except Exception as e:
             logging.warning(f"Failed to process tile {tile_path}: {e}")
+            
+stitched = stitched.transpose(Image.ROTATE_270)       # Rotate 90 degrees to the right
+stitched = stitched.transpose(Image.FLIP_LEFT_RIGHT)  # Then flip horizontally
 
     try:
         stitched.save("stitched_highres.tiff", format="TIFF")
