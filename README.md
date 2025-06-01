@@ -18,7 +18,8 @@ Cloupe_image.stitch_cloupe_image('your_cloupe_file.cloupe')
 ```
 
 The output includes a very high-resolution image (stitched_highres.tiff) and a downsampled version (stitched_downsampled.tiff) for easier visualization.
-Example to display downsampled image:
+
+Example to display a downsampled image:
 ```python
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -32,4 +33,4 @@ plt.show()
 
 
 ### Thanks to [cellgeni/cloupe](https://github.com/cellgeni/cloupe.git) for inspiration and concepts used in this project.
-some of the concepts used in this repo are from cellgeni/cloupe, such as opening a cloupe file in Python and iterating through its content 
+some of the concepts used in this package are from cellgeni/cloupe, such as opening a Cloupe file in Python and iterating through its content 
