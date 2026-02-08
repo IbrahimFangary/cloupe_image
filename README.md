@@ -1,8 +1,8 @@
 # cloupe_image
 
-High-resolution microscope images (e.g., 20,000 × 20,000 pixels), which are much larger than the `tissue_hires_image.png`, are often not readily available as a single file. Instead, these images are usually stored inside the `.cloupe` file as multiple smaller tiles (chunks) at various resolutions.
+High-resolution microscope images (e.g., 20,000 × 20,000 pixels), which are much larger than the `tissue_hires_image.png`, are often not readily available as a single file. Instead, these images are usually stored inside the 10X Genomics `.cloupe` file as multiple smaller tiles (chunks) at various resolutions.
 
-This package is used for opening a `.cloupe` file, extracting these image tiles, and stitching them together to reconstruct the full high-resolution microscope image.
+This package implements a **multi-resolution tile pyramid reconstruction** method to recover high-resolution microscope images stored inside 10x Genomics `.cloupe` files. Large histology images (e.g., 20,000 × 20,000 pixels) are not stored as single files, but rather as collections of smaller image tiles at multiple resolution levels, similar to the approach used in platforms like Google Maps. The package extracts these tiles, reconstructs their spatial arrangement, and stitches them together to generate the full high-resolution image, enabling direct access to image data that is otherwise unavailable as a standalone file.
 
 ## Installation
 
